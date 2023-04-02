@@ -37,7 +37,23 @@ class my_alg:
             if what[x] < value:
                 value, index = what[x], x
         return value, index 
+    def quick_sort(self):
+        OriginArray = copy.copy(self.data)
+        SortArray = self.quick_sort_recursive(OriginArray)
+        print(f"{OriginArray} 的排序結果為 {SortArray}")
+    def quick_sort_recursive(self, numbers):
+        # 如果只有0/1個元素的話不用進行比較
+        if len(numbers) < 2:
+            return numbers
+        else:
+            pivot = numbers[0]
+            # 從pivot的下一個開始比較
+            left = [x for x in numbers[1:] if x <= pivot]
+            right = [x for x in numbers[1:] if x > pivot]
+            # 注意連接的東西(pivot 從int -> list)
+            return self.quick_sort_recursive(left) + [pivot] + self.quick_sort_recursive(right)
 if __name__ == '__main__':
     test_obj = my_alg([10,3,5,2,7,6])
     # test_obj.binary_search(10)
-    test_obj.selection_sort()
+    # test_obj.selection_sort()
+    test_obj.quick_sort()
