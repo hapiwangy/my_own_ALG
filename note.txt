@@ -1,0 +1,51 @@
+樹狀結構
+    binary-tree: 搜尋/插入/刪除的時間都和陣列一樣或甚至比陣列還快
+    自平衡的二元搜尋樹
+    B-tree
+    red-black tree
+    heap-tree
+    splay-tree
+
+反向索引
+    透過value來尋找key
+
+傅立葉轉換(Fourier transform)
+    效能佳，用途廣泛
+    可以用在解析成分(聲音，圖片等等)
+
+平行演算法(parallel Alg)
+    和效能以及可擴展性有關
+    可以突破之前分析的時間複雜度上限(qsort可以從nlogn->n)
+    需要研究問題
+        1.平行性的管理上限
+        2.負載平衡(如何合理分配每個人的工作)
+
+MapReduce
+    和分散式演算法(一種特別的平行演算法)有關(在很多的裝置上面進行平行運算)(可以和Apache Hadoop一起搭配使用)
+    適用時機
+        如果要針對數量極大的資料及進行SQL查詢可以使用
+    字面上的意思，由Map 和Reduce為主軸
+        map(): 可以把一個陣列轉換成一個陣列(對內容進行小修改)
+            可以達到任務分配的效果(把工作map給不同的工人)
+        reduce(): 把分出去的工作在集合起來(透過指定的方式)
+
+Bloom filter and HyperLogLog(兩者都提供近似的答案，通常都用在大量的資料上面)
+    Bloom filter提供可能正確的答案(會有誤肯定、誤否定的情況產生)
+    HyperLogLog針對集合內不同元素取近似值
+
+SHA演算法(Secure Hash Algorithm)
+    用途:
+        1 檔案比較: 如果要查看自己跟對方是否有相同的檔案，將檔案名字輸入SHA若輸出一樣代表檔案也相同
+        2 密碼比對: 登入密碼通常會以SHA的方式儲存，這樣界可以不用知道我們的實際密碼(SHA的結果不具有逆推性)
+    目前密碼雜湊的最高標準為bcrypt加密
+
+局部敏感雜湊(Locality-Sensitive Hashing) 
+    類似的字串(可能只有幾個字母差異)所產生的雜湊會相似(如果是SHA的話就會完全不同)
+    透過Simhash(類似雜湊)
+
+狄菲赫爾曼金鑰交換(Diffie-Hellman key exchange)
+    有兩個金鑰，透過公開金鑰加密，並只有透過私有金鑰才能正確解密
+
+Linear programming(線性規劃)
+    在特定限制下取得最大值
+    採用了單形演算法(simplex Algorithm)
